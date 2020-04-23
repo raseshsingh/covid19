@@ -34,20 +34,23 @@
 
 <script>
 
-  var urls = 'https://covid-193.p.rapidapi.com/history?country=india';
-  var response = await fetch(urls, {
-    "method": "GET",
-    "headers": {
-      "x-rapidapi-host": "covid-193.p.rapidapi.com",
-      "x-rapidapi-key": "524f6ccde0msh03275df0def94e1p1b71efjsn68497b138311"
-    }
-  });
+  const getCasesDeaths = async function () {
+    var urls = 'https://covid-193.p.rapidapi.com/history?country=india';
+    var response = await fetch(urls, {
+      "method": "GET",
+      "headers": {
+        "x-rapidapi-host": "covid-193.p.rapidapi.com",
+        "x-rapidapi-key": "524f6ccde0msh03275df0def94e1p1b71efjsn68497b138311"
+      }
+    });
 
-  var jsonResponse = await response.json();
-  $('.totalCases').append(`Total No Of Cases ${jsonResponse['response'][0]['cases']['total']}`);
-  $('.totalDeaths').append(`Total No Of Deaths ${jsonResponse['response'][0]['deaths']['total']}`);
-  console.log(jsonResponse['response'][0]['cases']['total']);
-  console.log(jsonResponse['response'][0]['deaths']['total']);
+    var jsonResponse = await response.json();
+    $('.totalCases').append(`Total No Of Cases ${jsonResponse['response'][0]['cases']['total']}`);
+    $('.totalDeaths').append(`Total No Of Deaths ${jsonResponse['response'][0]['deaths']['total']}`);
+    console.log(jsonResponse['response'][0]['cases']['total']);
+    console.log(jsonResponse['response'][0]['deaths']['total']);
+  }
+  getCasesDeaths();
 </script>
 
 <!--======================================         ONLINE AND OFFLINE FONTS         =============================================-->
