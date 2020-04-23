@@ -1,0 +1,44 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.manifest.json">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+  <link rel="favicon" href="icon.png" type="image/png">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#7D58FE">
+</head>
+
+<body>
+<!-- Add your site or application content here -->
+<p>Hello world! This is HTML5 Boilerplate.</p>
+
+
+<script src="js/vendor/jquery-3.5.0min.js"></script>
+<script src="js/vendor/bootstrap.bundle.min.js"></script>
+<script src="js/vendor/ApexCharts.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+
+<script>
+  if (navigator.onLine) { // true|false
+    $('head').append(`<link href="https://fonts.googleapis.com/css?family=Heebo|Neuton:400,700|Roboto&display=swap" rel="stylesheet"> `)
+    console.log('Connection Exists')
+  } else {
+    $('head').append(`<link rel="stylesheet" href="fonts/stylesheet.css">`)
+    alert("Working offline");
+  }
+</script>
+</body>
+
+</html>
