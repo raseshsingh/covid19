@@ -7,6 +7,17 @@
 /*font-family: 'Heebo', sans-serif;*/
 
 
-body{
+body {
   font-family: 'Heebo', sans-serif;
+}
+
+.device-simulation {
+  position: absolute;
+  z-index: 1;
+  width: 441px !important;
+  height: 731px !important;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #FFFFFF;
 }

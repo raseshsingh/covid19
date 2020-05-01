@@ -15,15 +15,16 @@
   <meta name="theme-color" content="#7D58FE">
 </head>
 
-<body>
+<body style="background-color: #3D2201;">
 <!-- Add your site or application content here -->
-
-<div class="container">
-  <div class="row">
-    <h1 class="totalCases text-warning"></h1>
-    <h1 class="totalDeaths text-danger"></h1>
+<div class="device-simulation">
+  <div class="container">
+    hello
   </div>
 </div>
+
+<!--==============================   FETCHED DATA   ==================================-->
+<pre style="height:100%;width: 100%;color: whitesmoke"></pre>
 
 
 <script src="js/vendor/jquery-3.5.0min.js"></script>
@@ -33,24 +34,52 @@
 
 
 <script>
+  var source = 'https://covid-193.p.rapidapi.com/history?country=india';
+  fetch(source, {
+    "method": "GET",
+    "headers": {
+      "x-rapidapi-host": "covid-193.p.rapidapi.com",
+      "x-rapidapi-key": "524f6ccde0msh03275df0def94e1p1b71efjsn68497b138311"
+    }
+  })
 
-  const getCasesDeaths = async function () {
-    var urls = 'https://covid-193.p.rapidapi.com/history?country=india';
-    var response = await fetch(urls, {
-      "method": "GET",
-      "headers": {
-        "x-rapidapi-host": "covid-193.p.rapidapi.com",
-        "x-rapidapi-key": "524f6ccde0msh03275df0def94e1p1b71efjsn68497b138311"
+    .then(
+      function (response) {
+        if (response.status !== 200) {
+          console.log('Looks like there was a problem. Status Code: ' +
+            response.status);
+          return;
+        }
+
+        // Examine the text in the response
+        response.json().then(function (data) {
+          console.log(data['response']);
+          $('pre').text(JSON.stringify(data['response'], null, 2));
+        });
       }
+    )
+    .catch(function (err) {
+      console.log('Fetch Error :-S', err);
     });
 
-    var jsonResponse = await response.json();
-    $('.totalCases').append(`Total No Of Cases ${jsonResponse['response'][0]['cases']['total']}`);
-    $('.totalDeaths').append(`Total No Of Deaths ${jsonResponse['response'][0]['deaths']['total']}`);
-    console.log(jsonResponse['response'][0]['cases']['total']);
-    console.log(jsonResponse['response'][0]['deaths']['total']);
-  }
-  getCasesDeaths();
+
+  //  const getCasesDeaths = async function () {
+  //    var urls = 'https://covid-193.p.rapidapi.com/history?country=india';
+  //    var response = await fetch(urls, {
+  //      "method": "GET",
+  //      "headers": {
+  //        "x-rapidapi-host": "covid-193.p.rapidapi.com",
+  //        "x-rapidapi-key": "524f6ccde0msh03275df0def94e1p1b71efjsn68497b138311"
+  //      }
+  //    });
+  //
+  //    var jsonResponse = await response.json();
+  //    $('.totalCases').append(`Total No Of Cases ${jsonResponse['response'][0]['cases']['total']}`);
+  //    $('.totalDeaths').append(`Total No Of Deaths ${jsonResponse['response'][0]['deaths']['total']}`);
+  //    console.log(jsonResponse['response'][0]['cases']['total']);
+  //    console.log(jsonResponse['response'][0]['deaths']['total']);
+  //  }
+  //  getCasesDeaths();
 </script>
 
 <!--======================================         ONLINE AND OFFLINE FONTS         =============================================-->
