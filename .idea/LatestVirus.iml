@@ -11,5 +11,6 @@
     <orderEntry type="library" name="analytics" level="application" />
     <orderEntry type="library" name="@types/jquery" level="application" />
     <orderEntry type="library" name="@types/es6-collections" level="application" />
+    <orderEntry type="library" name="@types/feather-icons" level="application" />
   </component>
 </module>
