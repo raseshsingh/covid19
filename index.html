@@ -14,6 +14,7 @@
   <link href="css/lineicons/font-css/LineIcons.css" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
   <meta name="theme-color" content="#7D58FE">
+
 </head>
 
 <body style="background-color: #3D2201;">
@@ -22,37 +23,37 @@
   <a class="nav-link active" onclick="$('#pills-home').tab('show');$('.nav-link').removeClass('active')">star</a>
   <div class="container">
     <div class="row">
-      <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 p-4">
+      <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-6 p-4">
         <div class="wrapper br-lg bg-white m-1">
           <span class="p-3 icon-size-50px d-inline-block m-4 br-sm bg-success-light rounded-lg">
             <i class="lni lni-arrow-down  text-success icon-bg"></i>
           </span>
           <h3 class="m-0 pl-4">7423</h3>
-          <p class="pt-3 px-4 m-0 desc">Total Cases in India</p>
+          <p class="pt-3 px-4 m-0 desc">Confirmed Cases</p>
           <span class="d-inline-block difference pb-3 p-4 text-success"> +45 </span>
         </div>
       </div>
-      <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 p-4">
-        <div class="wrapper br-lg bg-white m-1">
-          <span class="p-3 icon-size-50px d-inline-block m-4 br-sm bg-danger-light rounded-lg">
-            <i class="lni lni-arrow-up  text-danger icon-bg"></i>
-          </span>
-          <h3 class="m-0 pl-4">7423</h3>
-          <p class="pt-3 px-4 m-0 desc">Total Cases in India</p>
-          <span class="d-inline-block difference pb-3 p-4 text-success"> +45 </span>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 p-4">
+      <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-6 p-4">
         <div class="wrapper br-lg bg-white m-1">
           <span class="p-3 icon-size-50px d-inline-block m-4 br-sm bg-warning-light rounded-lg">
-            <i class="lni lni-arrow-up  text-warning icon-bg"></i>
+            <i class="lni lni-arrow-up  text-danger icon-bg"></i>
           </span>
-          <h3 class="m-0 pl-4">7423</h3>
-          <p class="pt-3 px-4 m-0 desc">Total Cases in India</p>
-          <span class="d-inline-block difference pb-3 p-4 text-success"> +45 </span>
+          <h3 class="m-0 pl-4">1254</h3>
+          <p class="pt-3 px-4 m-0 desc">Deaths</p>
+          <span class="d-inline-block difference pb-3 p-4 text-success"> +85 </span>
         </div>
       </div>
-      <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 p-4">
+      <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-6 p-4">
+        <div class="wrapper br-lg bg-white m-1">
+          <span class="p-3 icon-size-50px d-inline-block m-4 br-sm bg-danger-light rounded-lg">
+            <i class="lni lni-arrow-up  text-success icon-bg"></i>
+          </span>
+          <h3 class="m-0 pl-4">7423</h3>
+          <p class="pt-3 px-4 m-0 desc">Cured / Discharged</p>
+          <span class="d-inline-block difference pb-3 p-4 text-success"> +52 </span>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-6 p-4">
         <div class="wrapper br-lg bg-white m-1">
           <span class="p-3 icon-size-50px d-inline-block m-4 br-sm bg-success-light rounded-lg">
             <i class="lni lni-arrow-up  text-success icon-bg"></i>
@@ -102,8 +103,12 @@
 <script src="js/vendor/jquery-3.5.0min.js"></script>
 <script src="js/vendor/bootstrap.bundle.min.js"></script>
 <script src="js/vendor/ApexCharts.js"></script>
-<script src="js/vendor/feather.min.js"></script>
+<script src="js/vendor/jquery.matchHeight-min.js"></script>
 <script src="js/main.js"></script>
+
+<script>
+  $('.wrapper>p').matchHeight();
+</script>
 
 
 <script>
