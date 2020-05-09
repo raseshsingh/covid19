@@ -11,107 +11,143 @@
   <!-- Place favicon.ico in the root directory -->
   <link rel="favicon" href="icon.png" type="image/png">
   <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link href="css/swiper.min.css" rel="stylesheet">
   <link href="css/lineicons/font-css/LineIcons.css" rel="stylesheet">
+  <link href="css/lineicons/font-css/LineIconsPro.css" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
   <meta name="theme-color" content="#7D58FE">
 
+  <script src="js/vendor/jquery-3.5.0min.js"></script>
+  <script src="js/vendor/jquery.matchHeight-min.js"></script>
+  <style>
+    .swiper-container {
+      width: 100% !important;
+      height: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
 </head>
 
 <body style="background-color: #3D2201;">
 <!-- Add your site or application content here -->
 <div class="device-simulation">
-  <a class="nav-link active" onclick="$('#pills-home').tab('show');$('.nav-link').removeClass('active')">star</a>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-6 p-4">
-        <div class="wrapper br-lg bg-white m-1">
+  <div class="swiper-container swiper-container-h">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" data-hash="home">
+        <div class="container">
+          <div class="row">
+            <!--===================================== CONFIRMED =====================================-->
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-6 p-4">
+              <div class="wrapper br-lg bg-white m-1">
           <span class="p-3 icon-size-50px d-inline-block m-4 br-sm bg-success-light rounded-lg">
-            <i class="lni lni-arrow-down  text-success icon-bg"></i>
+            <i class="lnir lni-molecule-alt text-warning icon-bg"></i>
           </span>
-          <h3 class="m-0 pl-4">7423</h3>
-          <p class="pt-3 px-4 m-0 desc">Confirmed Cases</p>
-          <span class="d-inline-block difference pb-3 p-4 text-success"> +45 </span>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-6 p-4">
-        <div class="wrapper br-lg bg-white m-1">
-          <span class="p-3 icon-size-50px d-inline-block m-4 br-sm bg-warning-light rounded-lg">
-            <i class="lni lni-arrow-up  text-danger icon-bg"></i>
+                <h3 class="m-0 pl-4" id="confirmed">0</h3>
+                <p class="pt-3 px-4 m-0 desc">Confirmed Cases</p>
+                <span class="d-inline-block difference pb-3 p-4 text-warning" id="confirmed_diff"> +0 </span>
+              </div>
+            </div>
+            <!--===================================== ACTIVE CASES  =====================================-->
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-6 p-4">
+              <div class="wrapper br-lg bg-white m-1">
+          <span class="p-3 icon-size-50px d-inline-block m-4 br-sm bg-success-light rounded-lg">
+            <i class="lni lni-ambulance my-text-primary icon-bg"></i>
           </span>
-          <h3 class="m-0 pl-4">1254</h3>
-          <p class="pt-3 px-4 m-0 desc">Deaths</p>
-          <span class="d-inline-block difference pb-3 p-4 text-success"> +85 </span>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-6 p-4">
-        <div class="wrapper br-lg bg-white m-1">
+                <h3 class="m-0 pl-4" id="active">0</h3>
+                <p class="pt-3 px-4 m-0 desc">Active Cases</p>
+                <span class="d-inline-block difference pb-3 p-4 text-primary" id="active_diff"> +0 </span>
+              </div>
+            </div>
+            <!--===================================== CURED / DISCHARGED =====================================-->
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-6 p-4">
+              <div class="wrapper br-lg bg-white m-1">
           <span class="p-3 icon-size-50px d-inline-block m-4 br-sm bg-danger-light rounded-lg">
-            <i class="lni lni-arrow-up  text-success icon-bg"></i>
+            <i class="lni lni-protection  text-success icon-bg"></i>
           </span>
-          <h3 class="m-0 pl-4">7423</h3>
-          <p class="pt-3 px-4 m-0 desc">Cured / Discharged</p>
-          <span class="d-inline-block difference pb-3 p-4 text-success"> +52 </span>
+                <h3 class="m-0 pl-4" id="cured">0</h3>
+                <p class="pt-3 px-4 m-0 desc">Cured / Discharged</p>
+                <span class="d-inline-block difference pb-3 p-4 text-success" id="cured_diff"> +0 </span>
+              </div>
+            </div>
+            <!--===================================== DEATHS =====================================-->
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-6 p-4">
+              <div class="wrapper br-lg bg-white m-1">
+          <span class="p-3 icon-size-50px d-inline-block m-4 br-sm bg-warning-light rounded-lg">
+            <i class="lnir lni-dead  text-danger icon-bg"></i>
+          </span>
+                <h3 class="m-0 pl-4" id="deaths">0</h3>
+                <p class="pt-3 px-4 m-0 desc">Deaths</p>
+                <span class="d-inline-block difference pb-3 p-4 text-danger" id="deaths_diff"> +0 </span>
+              </div>
+            </div>
+          </div>
+          <script>
+            $('.wrapper>p').matchHeight();
+          </script>
         </div>
       </div>
-      <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-6 p-4">
-        <div class="wrapper br-lg bg-white m-1">
-          <span class="p-3 icon-size-50px d-inline-block m-4 br-sm bg-success-light rounded-lg">
-            <i class="lni lni-arrow-up  text-success icon-bg"></i>
-          </span>
-          <h3 class="m-0 pl-4">7423</h3>
-          <p class="pt-3 px-4 m-0 desc">Total Cases in India</p>
-          <span class="d-inline-block difference pb-3 p-4 text-success"> +45 </span>
-        </div>
-      </div>
-    </div>
-  </div>
+      <div class="swiper-slide" data-hash="search">
+        <div class="swiper-container swiper-container-v">
+          <div class="swiper-wrapper test">
 
-  <div class="container m-2">
-    <!-- =============================================   Navigation   ===================================================== -->
-    <!--    <ul class="nav nav-pills mb-3 position-fixed bottom-0 left-0 w-100" id="pills-tab" role="tablist">-->
-    <!--      <li class="nav-item">-->
-    <!--        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>-->
-    <!--      </li>-->
-    <!--      <li class="nav-item">-->
-    <!--        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>-->
-    <!--      </li>-->
-    <!--      <li class="nav-item">-->
-    <!--        <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</a>-->
-    <!--      </li>-->
-    <!--    </ul>-->
-    <div class="tab-content" id="pills-tabContent">
-      <div aria-labelledby="pills-home-tab/pills-home1" class="tab-pane fade show active" id="pills-home"
-           role="tabpanel">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae cumque eveniet illo ipsum labore maiores natus
-        nisi perferendis repellendus ut? A deleniti dignissimos doloribus eum, laboriosam libero obcaecati tempore
-        totam!
+          </div>
+        </div>
       </div>
-      <div aria-labelledby="pills-profile-tab" class="tab-pane fade" id="pills-profile" role="tabpanel">
-        Profile Tab
-      </div>
-      <div aria-labelledby="pills-contact-tab" class="tab-pane fade" id="pills-contact" role="tabpanel">
-        Contact Tab
-      </div>
+      <!-- Add Scroll Bar -->
+      <div class="swiper-scrollbar"></div>
     </div>
   </div>
+  <div class="swiper-slide" data-hash="map">The one</div>
 </div>
 
-<!--==============================   FETCHED DATA   ==================================-->
-<pre style="height:100%;width: 100%;color: whitesmoke"></pre>
-
-
-<script src="js/vendor/jquery-3.5.0min.js"></script>
-<script src="js/vendor/bootstrap.bundle.min.js"></script>
-<script src="js/vendor/ApexCharts.js"></script>
-<script src="js/vendor/jquery.matchHeight-min.js"></script>
-<script src="js/main.js"></script>
 
 <script>
-  $('.wrapper>p').matchHeight();
+  for (let i = 0; i < 80; i++) {
+    $('.test').append(`<div class="swiper-slide h-auto"><p class="p-5">${i}  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem dolorum itaque non odio! Asperiores, assumenda atque ducimus eius eligendi facere fuga id illo laborum minima necessitatibus quasi repellat velit voluptatem? ${i}</p></div>`)
+  }
 </script>
 
 
+<p class="main" style="height:100%;width: 100%;color: yellow"></p>
+<p class="data" style="height:100%;width: 100%;color: whitesmoke"></p>
+
+
+<script src="js/vendor/bootstrap.bundle.min.js"></script>
+<script src="js/vendor/ApexCharts.js"></script>
+<script src="js/vendor/swiper.min.js"></script>
+<script src="js/main.js"></script>
+
+
+<!--======================================    FETCHING AND PLACING     =============================================-->
 <script>
+  var main = 'https://covid-api.com/api/reports?iso=IND';
+  fetch(main).then(
+    (response) => {
+      response.json().then(function (data) {
+        console.log(data[0]);
+        $('#confirmed,#confirmed_diff,#active_diff,#active,#cured,#cured_diff,#deaths_diff,#deaths').text('0');
+        $('#confirmed').text(data['data'][0]['confirmed'].toLocaleString());
+        $('#confirmed_diff').text('+' + data['data'][0]['confirmed_diff'].toLocaleString());
+
+        $('#active').text(data['data'][0]['active'].toLocaleString());
+        $('#active_diff').text('+' + data['data'][0]['active_diff'].toLocaleString());
+
+        $('#cured').text(data['data'][0]['recovered'].toLocaleString());
+        $('#cured_diff').text('+' + data['data'][0]['recovered_diff'].toLocaleString());
+
+
+        $('#deaths').text(data['data'][0]['deaths'].toLocaleString());
+        $('#deaths_diff').text('+' + data['data'][0]['deaths_diff'].toLocaleString());
+        // $('p.main').text(JSON.stringify(data['data'][0]['confirmed'], null, 2));
+      });
+    }
+  )
+  console.log('===================================================================');
   var source = 'https://covid-193.p.rapidapi.com/history?country=india';
   fetch(source, {
     "method": "GET",
@@ -132,7 +168,7 @@
         // Examine the text in the response
         response.json().then(function (data) {
           console.log(data['response']);
-          $('pre').text(JSON.stringify(data['response'], null, 2));
+          $('p.data').text(JSON.stringify(data['response'], null, 2));
         });
       }
     )
@@ -140,24 +176,6 @@
       console.log('Fetch Error :-S', err);
     });
 
-
-  //  const getCasesDeaths = async function () {
-  //    var urls = 'https://covid-193.p.rapidapi.com/history?country=india';
-  //    var response = await fetch(urls, {
-  //      "method": "GET",
-  //      "headers": {
-  //        "x-rapidapi-host": "covid-193.p.rapidapi.com",
-  //        "x-rapidapi-key": "524f6ccde0msh03275df0def94e1p1b71efjsn68497b138311"
-  //      }
-  //    });
-  //
-  //    var jsonResponse = await response.json();
-  //    $('.totalCases').append(`Total No Of Cases ${jsonResponse['response'][0]['cases']['total']}`);
-  //    $('.totalDeaths').append(`Total No Of Deaths ${jsonResponse['response'][0]['deaths']['total']}`);
-  //    console.log(jsonResponse['response'][0]['cases']['total']);
-  //    console.log(jsonResponse['response'][0]['deaths']['total']);
-  //  }
-  //  getCasesDeaths();
 </script>
 
 <!--======================================         ONLINE AND OFFLINE FONTS         =============================================-->
@@ -169,6 +187,35 @@
     $('head').append(`<link rel="stylesheet" href="fonts/stylesheet.css">`)
     alert("Working offline");
   }
+</script>
+
+<!--======================================   SWIPER SLIDER    =============================================-->
+<script>
+  var mySwiper = new Swiper('.swiper-container-h', {
+    direction: 'horizontal',
+    loop: false,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+      renderBullet: function (index, className) {
+        return `<span class="${className}"> @${index + 1} </span>`;
+      },
+    },
+    spaceBetween: 50,
+    // mousewheel: true,
+    hashNavigation: {
+      watchState: true,
+    },
+  })
+  var swiper = new Swiper('.swiper-container-v', {
+    direction: 'vertical',
+    slidesPerView: 'auto',
+    freeMode: true,
+    scrollbar: {
+      el: '.swiper-scrollbar',
+    },
+    mousewheel: true,
+  });
 </script>
 </body>
 

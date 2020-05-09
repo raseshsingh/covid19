@@ -16,17 +16,24 @@ body {
 }
 
 .br-sm {
-  -webkit-border-radius: 10px !important;
-  -moz-border-radius: 10px !important;
-  border-radius: 10px !important;
+  -webkit-border-radius: 12px !important;
+  -moz-border-radius: 12px !important;
+  border-radius: 12px !important;
 }
 
 .icon-bg {
-  font-size: 20px;
+  font-size: 25px;
 }
 
 .icon-sm {
   font-size: 15px;
+}
+
+* {
+  -webkit-user-select: none !important; /* Chrome all / Safari all */
+  -moz-user-select: none !important; /* Firefox all */
+  -ms-user-select: none !important; /* IE 10+ */
+  user-select: none !important; /* Likely future */
 }
 
 .wrapper {
@@ -50,6 +57,10 @@ body {
   background-color: #fad7761f;
 }
 
+.my-text-primary {
+  color: #756af8 !important;
+}
+
 .wrapper h3 {
   font-family: Poppins;
   font-weight: 600;
@@ -64,7 +75,7 @@ body {
 }
 
 .icon-size-50px > i {
-  transform: translate(3px, 3px);
+  transform: translate(1px, 2px);
 }
 
 .difference {
@@ -90,6 +101,11 @@ body {
   background: #FFFFFF;
   height: 200px;
   width: auto;
+}
+
+.device-simulation {
+  width: 100% !important;
+  height: auto !important;
 }
 
 .device-simulation {
