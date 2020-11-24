@@ -1,6 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="">
-<!--ddddd-->
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <title>Corona Virus Spread Updates</title>
@@ -29,6 +28,10 @@
 
     ::-webkit-scrollbar {
       display: none;
+    }
+
+    div.swiper-slide {
+      height: auto !important;
     }
   </style>
 </head>
@@ -108,7 +111,7 @@
 
 <script>
   for (let i = 0; i < 80; i++) {
-    $('.test').append(`<div class="swiper-slide h-auto"><p class="p-5">${i}  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem dolorum itaque non odio! Asperiores, assumenda atque ducimus eius eligendi facere fuga id illo laborum minima necessitatibus quasi repellat velit voluptatem? ${i}</p></div>`)
+    $('.test').append(`<div class="swiper-slide"><p class="p-5">${i}  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem dolorum itaque non odio! Asperiores, assumenda atque ducimus eius eligendi facere fuga id illo laborum minima necessitatibus quasi repellat velit voluptatem? ${i}</p></div>`)
   }
 </script>
 
@@ -125,28 +128,32 @@
 
 <!--======================================    FETCHING AND PLACING     =============================================-->
 <script>
+  function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+
   var main = 'https://covid-api.com/api/reports?iso=IND';
   fetch(main).then(
     (response) => {
       response.json().then(function (data) {
         console.log(data[0]);
-        $('#confirmed,#confirmed_diff,#active_diff,#active,#cured,#cured_diff,#deaths_diff,#deaths').text('0');
         $('#confirmed').text(data['data'][0]['confirmed'].toLocaleString());
-        $('#confirmed_diff').text('+' + data['data'][0]['confirmed_diff'].toLocaleString());
+        $('#confirmed_diff').text('+' + numberWithCommas(data['data'][0]['confirmed_diff']));
 
         $('#active').text(data['data'][0]['active'].toLocaleString());
-        $('#active_diff').text('+' + data['data'][0]['active_diff'].toLocaleString());
+        $('#active_diff').text('+' + numberWithCommas(data['data'][0]['active_diff']));
 
         $('#cured').text(data['data'][0]['recovered'].toLocaleString());
-        $('#cured_diff').text('+' + data['data'][0]['recovered_diff'].toLocaleString());
+        $('#cured_diff').text('+' + numberWithCommas(data['data'][0]['recovered_diff']));
 
 
         $('#deaths').text(data['data'][0]['deaths'].toLocaleString());
-        $('#deaths_diff').text('+' + data['data'][0]['deaths_diff'].toLocaleString());
+        $('#deaths_diff').text('+' + numberWithCommas(data['data'][0]['deaths_diff']));
         // $('p.main').text(JSON.stringify(data['data'][0]['confirmed'], null, 2));
       });
     }
   )
+
   console.log('===================================================================');
   var source = 'https://covid-193.p.rapidapi.com/history?country=india';
   fetch(source, {

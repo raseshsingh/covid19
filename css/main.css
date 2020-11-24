@@ -111,8 +111,8 @@ body {
 .device-simulation {
   position: absolute;
   z-index: 1;
-  width: 441px !important;
-  height: 731px !important;
+  /*width: 441px !important;*/
+  /*height: 731px !important;*/
   top: 10px;
   left: 50%;
   transform: translate(-50%, 0%);
