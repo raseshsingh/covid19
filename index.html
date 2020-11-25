@@ -1,9 +1,11 @@
-<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <title>Corona Virus Spread Updates</title>
   <meta content="Corona Virus Spread Updates - Every 15 minutes statistics of corona virus" name="description">
+  <script>
+    alert('Under Development');
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="manifest" href="site.manifest.json">
   <link rel="apple-touch-icon" href="icon.png">
@@ -36,38 +38,39 @@
   </style>
 </head>
 
-<body style="background-color: #3D2201;">
+<body style="">
 <!-- Add your site or application content here -->
-<div class="device-simulation">
+<!--<div class="device-simulation m-0">-->
+<div class="m-0">
   <div class="swiper-container swiper-container-h">
     <div class="swiper-wrapper">
       <div class="swiper-slide" data-hash="home">
         <div class="container">
           <div class="row">
             <!--===================================== CONFIRMED =====================================-->
-            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-6 p-4">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 col-6 p-4">
               <div class="wrapper br-lg bg-white m-1">
-          <span class="p-3 icon-size-50px d-inline-block m-4 br-sm bg-success-light rounded-lg">
-            <i class="lnir lni-molecule-alt text-warning icon-bg"></i>
-          </span>
+                <span class="p-3 icon-size-50px d-inline-block m-4 br-sm bg-success-light rounded-lg">
+                  <i class="lnir lni-molecule-alt text-warning icon-bg"></i>
+                </span>
                 <h3 class="m-0 pl-4" id="confirmed">0</h3>
                 <p class="pt-3 px-4 m-0 desc">Confirmed Cases</p>
                 <span class="d-inline-block difference pb-3 p-4 text-warning" id="confirmed_diff"> +0 </span>
               </div>
             </div>
             <!--===================================== ACTIVE CASES  =====================================-->
-            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-6 p-4">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 col-6 p-4">
               <div class="wrapper br-lg bg-white m-1">
-          <span class="p-3 icon-size-50px d-inline-block m-4 br-sm bg-success-light rounded-lg">
-            <i class="lni lni-ambulance my-text-primary icon-bg"></i>
-          </span>
+                <span class="p-3 icon-size-50px d-inline-block m-4 br-sm bg-success-light rounded-lg">
+                  <i class="lni lni-ambulance my-text-primary icon-bg"></i>
+                </span>
                 <h3 class="m-0 pl-4" id="active">0</h3>
                 <p class="pt-3 px-4 m-0 desc">Active Cases</p>
                 <span class="d-inline-block difference pb-3 p-4 text-primary" id="active_diff"> +0 </span>
               </div>
             </div>
             <!--===================================== CURED / DISCHARGED =====================================-->
-            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-6 p-4">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 col-6 p-4">
               <div class="wrapper br-lg bg-white m-1">
           <span class="p-3 icon-size-50px d-inline-block m-4 br-sm bg-danger-light rounded-lg">
             <i class="lni lni-protection  text-success icon-bg"></i>
@@ -78,16 +81,19 @@
               </div>
             </div>
             <!--===================================== DEATHS =====================================-->
-            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-6 p-4">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 col-6 p-4">
               <div class="wrapper br-lg bg-white m-1">
-          <span class="p-3 icon-size-50px d-inline-block m-4 br-sm bg-warning-light rounded-lg">
-            <i class="lnir lni-dead  text-danger icon-bg"></i>
-          </span>
+                <span class="p-3 icon-size-50px d-inline-block m-4 br-sm bg-warning-light rounded-lg">
+                  <i class="lnir lni-dead  text-danger icon-bg"></i>
+                </span>
                 <h3 class="m-0 pl-4" id="deaths">0</h3>
                 <p class="pt-3 px-4 m-0 desc">Deaths</p>
                 <span class="d-inline-block difference pb-3 p-4 text-danger" id="deaths_diff"> +0 </span>
               </div>
             </div>
+          </div>
+          <div class="row">
+            Corona Virussss
           </div>
           <script>
             $('.wrapper>p').matchHeight();
